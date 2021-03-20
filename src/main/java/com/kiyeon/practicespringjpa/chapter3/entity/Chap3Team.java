@@ -1,4 +1,4 @@
-package com.kiyeon.practicespringjpa.entity;
+package com.kiyeon.practicespringjpa.chapter3.entity;
 
 import lombok.*;
 
@@ -10,7 +10,7 @@ import java.util.List;
 @Getter @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString(of = {"id", "name"})
-public class Team {
+public class Chap3Team {
 
     @Id
     @GeneratedValue
@@ -19,9 +19,9 @@ public class Team {
     private String name;
 
     @OneToMany(mappedBy = "team")
-    private List<Member> members = new ArrayList<>();
+    private List<Chap3Member> chap3Members = new ArrayList<>();
 
-    public Team(String name) {
+    public Chap3Team(String name) {
         this.name = name;
     }
 }

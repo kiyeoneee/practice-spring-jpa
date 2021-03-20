@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 // SpringBoot 를 사용하면 자동으로 찾아옴
-//@EnableJpaRepositories(basePackages = "com.kiyeon.practicespringjpa.repository")
+//@EnableJpaRepositories(basePackages = "com.kiyeon.practicespringjpa.chapter3.repository")
 public class PracticeSpringJpaApplication {
 
 	public static void main(String[] args) {
