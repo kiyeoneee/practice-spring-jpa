@@ -13,7 +13,7 @@ import javax.persistence.*;
         query="select m from Chap5Member m where m.username = :username"
 )
 @NamedEntityGraph(name = "Chap5Member.all", attributeNodes = @NamedAttributeNode("team"))
-public class Chap5Member {
+public class Chap5Member extends Chap5BaseEntity {
 
     @Id @GeneratedValue
     @Column(name = "member_id")
@@ -24,6 +24,10 @@ public class Chap5Member {
     @ManyToOne(fetch = FetchType.LAZY)  // 실무는 무조건 LAZY로 걸자!
     @JoinColumn(name = "team_id") // foreign key 이름으로 매핑
     private Chap5Team team;
+
+    public Chap5Member(String username) {
+        this.username = username;
+    }
 
     public Chap5Member(String username, int age) {
         this.username = username;
