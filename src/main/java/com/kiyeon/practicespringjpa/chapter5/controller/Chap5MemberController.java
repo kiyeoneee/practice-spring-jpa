@@ -35,7 +35,7 @@ public class Chap5MemberController {
                  .map(Chap5MemberDto::new);
     }
 
-    @PostConstruct
+//    @PostConstruct
     public void init() {
         for (int i = 0; i < 100; i++){
             memberRepository.save(new Chap5Member("user" + i, i));
