@@ -25,7 +25,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 @SpringBootTest
 @Transactional
-@Rollback(false)
+//@Rollback(false)
 class Chap4MemberRepositoryTest {
 
     @Autowired
@@ -33,7 +33,7 @@ class Chap4MemberRepositoryTest {
     @Autowired
     Chap4TeamRepository teamRepository;
     @PersistenceContext
-    EntityManager em;  // 같은 트랜젝션에서는 모두 같은 entity manager 사
+    EntityManager em;  // 같은 트랜젝션에서는 모두 같은 entity manager 사용 
 
     @Test
     public void findByUsernameAndAgeGreaterThen() {
@@ -233,7 +233,8 @@ class Chap4MemberRepositoryTest {
 //        assertThat(page.getTotalPages()).isEqualTo(2);
         assertThat(page.isFirst()).isTrue();
         assertThat(page.hasNext()).isTrue();
-        assertThat(page.isLast()).isTrue();
+//        assertThat(page.isLast()).isTrue();
+        assertThat(page.isLast()).isFalse();
     }
 
     @Test
